@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -9,9 +10,27 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const links = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Contact', path: '/contact' },
+  ];
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="flex justify-between items-center w-11/12 mx-auto py-3">
+          <span className="text-3xl font-bold">Logo</span>
+          <ul className="flex justify-between items-center space-x-7">
+            {links?.map((link) => (
+              <Link key={link.path} href={link.path} className="px-3">
+                {link.title}
+              </Link>
+            ))}
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
