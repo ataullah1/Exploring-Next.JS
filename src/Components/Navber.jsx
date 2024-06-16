@@ -12,16 +12,30 @@ const Navber = () => {
     { title: 'Contact', path: '/contact' },
   ];
 
+  const handleLogin = () => {
+    console.log('Login Now');
+  };
+
   return (
     <nav className="flex justify-between items-center w-11/12 mx-auto py-3">
       <span className="text-3xl font-bold">Logo</span>
       <ul className="flex justify-between items-center space-x-7">
         {links?.map((link) => (
-          <Link key={link.path} href={link.path} className="px-3">
+          <Link
+            key={link.path}
+            href={link.path}
+            className={`px-3 ${pathName === link.path && 'text-yellow-400'}`}
+          >
             {link.title}
           </Link>
         ))}
       </ul>
+      <button
+        onClick={handleLogin}
+        className="bg-yellow-400 py-2 px-6 rounded-md text-slate-800 font-bold"
+      >
+        Login
+      </button>
     </nav>
   );
 };
