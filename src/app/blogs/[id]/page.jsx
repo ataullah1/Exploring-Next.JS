@@ -1,8 +1,8 @@
 import React from 'react';
 
 const detailsPage = ({ params }) => {
-  const { title, details } = data.find((dta) => dta.id == params.id);
-  console.log(title);
+  const { title, details } = data?.find((dta) => dta.id == params.id);
+  // console.log(title);
   return (
     <div className="max-w-screen-sm border border-yellow-400 rounded-md my-12 p-8 text-center space-y-6 mx-auto">
       <h1 className="text-3xl">{title}</h1>
