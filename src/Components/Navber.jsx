@@ -6,7 +6,7 @@ import React from 'react';
 const Navber = () => {
   const pathName = usePathname();
   const router = useRouter();
-  console.log(pathName);
+  // console.log(pathName);
   const links = [
     { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
