@@ -9,7 +9,7 @@ const detailsPage = ({ params }) => {
       <h3 className="text-lg">{details}</h3>
     </div>
   );
-};
+};npm run
 
 const data = [
   {

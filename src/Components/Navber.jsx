@@ -31,7 +31,7 @@ const Navber = () => {
         <button className="text-3xl font-bold max-w-28 sm:w-36 h-12 rounded-lg border-2 text-slate-600 border-slate-700">
           Logo
         </button>
-        <div className="hidden lg:flex xl:gap-4 items-center navigation text-slate-900 text-lg">
+        <div className="hidden lg:flex xl:gap-4 items-center navigation text-slate-900 xl:text-lg">
           <Link className="py-2 px-2 hover:text-pClr" href={'/'}>
             Home
           </Link>
@@ -46,29 +46,31 @@ const Navber = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-1 xl:gap-2 sm:gap-4 relative">
-          <div className="relative max-w-52 xl:w-auto xl:max-w-full">
+        <div className="flex items-center gap-2 relative">
+          <div className="relative max-w-48 xl:w-auto xl:max-w-full">
             <input
               type="text"
               placeholder="Search here..."
               className="py-1 px-2 border border-slate-200 focus:outline-none outline-none rounded-full pl-3 w-full text-slate-600"
             />
-            <span className="absolute z-50 top-1/2 -translate-y-1/2 right-3 text-xl text-slate-600">
+            <span className="absolute z-30 top-1/2 -translate-y-1/2 right-3 text-xl text-slate-600">
               <CgSearch />
             </span>
           </div>
-          <Link
-            href={'/login'}
-            className="py-2 px-4 xl:px-6 duration-200 bg-purple-50 hover:bg-purple-100 text-slate-900 rounded-full font-bold"
-          >
-            Log in
-          </Link>
-          <Link
-            href={'/signup'}
-            className="py-2 px-4 xl:px-6 duration-200 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-bold"
-          >
-            Sign Up
-          </Link>
+          <div className="hidden sm:flex gap-2">
+            <Link
+              href={'/login'}
+              className="py-2 px-4 xl:px-6 duration-200 bg-purple-50 hover:bg-purple-100 text-slate-900 rounded-full font-semibold"
+            >
+              Log in
+            </Link>
+            <Link
+              href={'/signup'}
+              className="py-2 px-4 xl:px-6 duration-200 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-semibold"
+            >
+              Sign Up
+            </Link>
+          </div>
 
           {/* Menu Btn */}
           <button
@@ -79,7 +81,7 @@ const Navber = () => {
           </button>
 
           {menu && (
-            <div className="absolute top-12 w-48 rounded-md p-5 right-0 bg-[#F5F4F3] lg:hidden flex flex-col items-center navigation text-slate-900 text-lg">
+            <div className="absolute top-12 w-72 rounded-md p-5 right-0 bg-[#F5F4F3] lg:hidden flex flex-col items-center navigation text-slate-900 text-lg">
               <span
                 onClick={() => setMenu(!menu)}
                 className="rounded-full absolute top-2 left-2 border p-1 border-slate-700 text-xl"
@@ -114,6 +116,21 @@ const Navber = () => {
               >
                 Become a service provider
               </Link>
+
+              <div className="flex flex-col gap-2 w-full text-center">
+                <Link
+                  href={'/login'}
+                  className="py-2 px-4 w-full xl:px-6 duration-200 bg-purple-50 hover:bg-purple-100 text-slate-900 rounded-full font-semibold"
+                >
+                  Log in
+                </Link>
+                <Link
+                  href={'/signup'}
+                  className="py-2 px-4 w-full xl:px-6 duration-200 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-semibold"
+                >
+                  Sign Up
+                </Link>
+              </div>
             </div>
           )}
         </div>
